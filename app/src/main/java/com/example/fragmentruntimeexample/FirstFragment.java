@@ -32,7 +32,10 @@ public class FirstFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_continer,new SecondFragment(),null).commit();
+                MainActivity.fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_continer,new SecondFragment(),null)
+                        .addToBackStack(null) //method to back to backward fragment
+                        .commit();
             }
         });
 
